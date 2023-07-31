@@ -1,0 +1,149 @@
+* {
+    font-family: "Work Sans", sans-serif;
+    --fir-color-grey: rgba(0,0,0, 0.40);
+  }
+  
+  html, body {
+    height: 100%;
+    color: #1a1b1c;
+  }
+
+  table {
+    width: 100%;
+  }
+  th, td{
+    padding: 10px;
+    border-bottom: 1px solid #dadada;
+    text-align: center;
+  }
+
+  
+  label, a {
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+    transition: border 0.2s;
+    border-bottom: 5px solid rgba(142, 68, 173, 0.2);
+    padding: 3px 2px;
+  }
+  label:hover, a:hover {
+    border-bottom-color: #9b59b6;
+  }
+  
+  .layout {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    /* overflow: hidden; */
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  input[type=radio] {
+    display: none;
+  }
+  
+  label.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-bottom: 2px solid #8FBC94;
+    background: #ecf0f1;
+    user-select: none;
+    transition: background 0.4s, padding-left 0.2s;
+    padding-left: 0;
+  }
+  input[type=radio]:checked + .page + label.nav {
+    background: #9fd661;
+    color: #ffffff;
+    padding-left: 20px;
+  }
+  input[type=radio]:checked + .page + label.nav span {
+    padding-left: 20px;
+  }
+  input[type=radio]:checked + .page + label.nav svg {
+    opacity: 1;
+  }
+  label.nav span {
+    padding-left: 0px;
+    position: relative;
+  }
+  label.nav svg {
+    left: 0;
+    top: -3px;
+    position: absolute;
+    width: 15px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .page {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-column-end: span 3;
+    padding: 0px 20px;
+    display: flex;
+    margin-top: 7%;
+    align-items: top;
+  }
+  
+  
+  input[type=radio] + .page {
+    transition: transform 0.2s;
+    transform: translateX(100%);
+  }
+  
+  input[type=radio]:checked + .page {
+    transform: translateX(0%);
+  }
+  input[type=radio]:checked + .page .page-contents > * {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  
+  .page-contents {
+    max-width: 100%;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .fir-clickcircle {
+    height: 80px;
+    width: 80px;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+  
+  .fir-img-figure {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .fir-img-figure .caption, .fir-img-figure figcaption {
+    padding-left: 15px;
+  }
+  
+  html.wf-active .fir-img-figure .fig-author-figure-title {
+    font-family: var(--fir-font-header);
+    font-size: 16px;
+  }
+  
+  .fir-img-figure .fig-author-figure-title {
+    color: var(--fir-color-grey);
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    margin-top: 2px;
+  }
+
+  .graph-container {
+    margin-bottom: 20px; /* 그래프 간의 간격을 조정하기 위한 마진 값 */
+  }
+  
